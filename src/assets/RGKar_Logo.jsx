@@ -3,7 +3,7 @@ import React from 'react'
 function RGKar_Logo() {
   return (
     <div>
-      <svg width="250" height="180" viewBox="0 0 600 330" xmlns="http://www.w3.org/2000/svg">
+      <svg width="250" className='not-md:w-[100px] not-md:h-[100px]' height="180" viewBox="0 0 600 330" xmlns="http://www.w3.org/2000/svg">
   <rect x="12" y="12"  rx="26"
         fill="#ffffff" stroke="#0b6fc1" stroke-width="4"/>
 
