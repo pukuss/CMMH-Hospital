@@ -1,4 +1,5 @@
 @import "tailwindcss";
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -53,3 +54,46 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+
+
+/* animations  */
+@import "tailwindcss";
+
+@font-face {
+  font-family: "knewave";
+  src: url('./assets/font/Knewave-Regular.ttf');
+}
+@theme {
+  --font-knews: "knewave" , sans-serif;
+}
+
+
+
+
+
+
+
+
+
+/* custom keyframes and utility classes */
+@keyframes slideDown {
+  0% { transform: translateY(-40px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-40px); opacity: 0; }
+}
+
+/* small utilities that mimic Tailwind animate-... */
+.animate-slideDown {
+  animation: slideDown .3s ease-out;
+}
+
+.animate-slideUp {
+  animation: slideUp .3s ease-in;
+}
+
+

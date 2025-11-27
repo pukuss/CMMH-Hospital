@@ -1,6 +1,3 @@
-//  <div className='border-r-10 border-amber-500 w-29 rounded-tr-full '>
-//   <div className='border-r-8  w-27 rounded-tr-full border-amber-50' >
-//   <div className='border-r-10 w-25 rounded-tr-full border-emerald-500 '>
 import React, { useState } from "react";
 import { RG_Kar_Hospital_lgo, MenuBar } from "../assets/Assets";
 import { NavLink } from "react-router-dom";
@@ -18,9 +15,7 @@ function Navbar() {
   return (
     <>
       {/* Navbar */}
-      <nav className="fixed w-screen h-10 md:h-16 flex justify-center items-center bg-gray-500 z-50">
-
-
+      <nav className=" overflow-hidden fixed w-screen h-10 md:h-16 flex justify-center items-center bg-gray-500 z-50">
         <div className="items-center relative h-full w-[1600px] flex justify-between px-5">
           {/* Logo */}
           <div className="w-24 ">
@@ -35,22 +30,37 @@ function Navbar() {
 
           {/* Desktop Menu */}
           <ul className="md:flex md:flex-nowrap xl:gap-2 md:gap-2 hidden">
-            <li>
+            <li className={Dex_menu}>
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  `${Dex_menu}  ${
-                    isActive
-                      ? "text-amber-600 font-bold"
-                      : "text-black  font-bold"
-                  }`
+                  `${isActive ? "text-amber-600 font-bold" : "font-bold"}`
                 }>
-                Home
+                HOME
               </NavLink>
             </li>
 
-            <li className={Dex_menu}>ADDMITION</li>
-            <li className={Dex_menu}>ACADEMICS</li>
+            <li className={Dex_menu}>
+              <NavLink
+                to="Addmition"
+                className={({ isActive }) =>
+                  `${isActive ? "text-amber-600 font-bold" : "font-bold"}`
+                }>
+                ADDMITION
+              </NavLink>
+            </li>
+
+            <li className={Dex_menu}>
+              <NavLink
+              to={"Academic"}
+              className={({isActive})=>
+                `${isActive ? "text-amber-600": "font-bold"}`
+              } 
+              >
+                ACADEMICS
+              </NavLink>
+            </li>
+
             <li className={Dex_menu}>HOSPITAL SERVICES</li>
             <li className={Dex_menu}>FOR NMC</li>
             <li className={Dex_menu}>ODER NOTICE</li>
@@ -67,26 +77,26 @@ function Navbar() {
               }`}>
               LogIn
             </button>
-            
+
             {/* Hamburger */}
-          <button
-            onClick={() => setopen(!open)}
-            className="md:hidden h-6 w-6">
-            <img src={MenuBar} alt="" />
-          </button>
-
-
+            <button
+              onClick={() => setopen(!open)}
+              className="md:hidden h-6 w-6">
+              <img src={MenuBar} alt="" />
+            </button>
           </div>
-
-          
         </div>
       </nav>
 
       {/* Mobile Menu */}
       {open && (
-        <div className="w-50 flex fixed right-2 top-10 mt-2 z-40">
+        <div className="w-50 flex fixed right-2 top-10 mt-2 z-40"
+          // onClick={(e) => e.stopPropagation()}
+        >
           <ul className="gap-1 md:hidden w-full rounded-2xl p-5 flex flex-col bg-gradient-to-r from-fuchsia-600/50 to-blue-400/50">
             <li>
+              {" "}
+              {/*Home*/}
               <NavLink
                 to="/"
                 className={({ isActive }) =>
@@ -100,7 +110,21 @@ function Navbar() {
               </NavLink>
             </li>
 
-            <li className={menuclass}>ADDMITION</li>
+            <li>
+              {" "}
+              {/*addmition*/}
+              <NavLink
+                to="Addmition"
+                className={({ isActive }) =>
+                  `${menuclass}  ${
+                    isActive
+                      ? "text-emerald-500 border border-emerald-700 italic"
+                      : "text-amber-50"
+                  }`
+                }>
+                ADDMITION
+              </NavLink>
+            </li>
             <li className={menuclass}>ACADEMICS</li>
             <li className={menuclass}>HOSPITAL SERVICES</li>
             <li className={menuclass}>FOR NMC</li>
