@@ -1,16 +1,44 @@
-import React from "react";
-import { RG_Kar_Hospital_lgo } from "../../assets/Assets";
-import Logo from "../../assets/RGKar_Logo";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+// import { Link,useLoaderData } from "react-router-dom";
+import { useRef, useState, useEffect } from "react";
+import { NavLink , Link } from "react-router-dom";
+import {Server , DiamondIcon, DiamondMinus, PlusIcon, RegexIcon, RectangleEllipsisIcon, GoalIcon, SolarPanelIcon} from 'lucide-react'
+
 
 import githubApi from "../Api/Github";
+
+
+import Infenera from "../page_comp/home/Infenera";
+
+
 
 function Home() {
   // Github Dropdown
   const [githubOpen, setgithubOpen] = useState(false);
-  const [GoogleOpen , setGoogleOpen] = useState(false)
-  const GithubApiDeta = githubApi();
+  const [GoogleOpen, setGoogleOpen] = useState(false)
+  // const GithubApiDeta = useLoaderData(); looder..............>>>
+  const GithubApiDeta = githubApi()
+  const dropdownRef = useRef(null)
+
+
+
+
+
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setgithubOpen(false); // auto-close
+      }
+    }
+
+    if (githubOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [githubOpen]);
 
 
 
@@ -28,7 +56,7 @@ function Home() {
             loop
             className="w-full object-cover h-screen  "
             src="/bg video/dna_bg.mp4">
-            
+
           </video>
         </div>
 
@@ -36,31 +64,10 @@ function Home() {
 
 
         <div className=" absolute  w-full top-10 md:top-18 m-auto">
-          <div className=" m-auto max-w-[1400px] w-full ">
-            <div className="flex justify-between items-center pr-10">
-              <span>
-                <Logo />
-              </span>
-              <div className="flex flex-col justify-center items-start text-blue-700 text-3xl text-shadow-[0px_0px_1px] text-shadow-blue-400 font-bold italic">
-                {/* addmition and exam > button? */}
-                <div>
-                  <Link className="relative inline-block text-[12px] group">
-                    <span className="relative z-10 block not-md:px-3 not-md:py-1 px-5 py-2 overflow-hidden font-medium leading-tight text-gray-600 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white">
-                      <span className="absolute inset-0 w-full h-full px-5 not-md:px-3 not-md:py-1 py-2 rounded-lg bg-amber-50"></span>
-                      <span className="absolute left-0 w-48 bg-red-600 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 group-hover:-rotate-180 ease"></span>
-                      <span className="relative after:content-['>'] ">
-                        addmition & exam{" "}
-                      </span>
-                    </span>
-                    <span
-                      className="absolute bottom-0 right-0 w-full not-md:h-8 h-9 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-emerald-600 rounded-lg group-hover:mb-0 group-hover:mr-0"
-                      data-rounded="rounded-lg"></span>
-                  </Link>
-                </div>
-              </div>
-            </div>
+          <div className=" m-auto max-w-[1600px] md:h-[92vh] h-[95vh]">
 
-            <div className="">
+
+            <div className=" relative h-full flex  justify-center items-center">
               <div>
                 <span
                   // style={{
@@ -74,8 +81,52 @@ function Home() {
                   className=" not-md:text-[30px] text-7xl font-bold ">
                   RG Kar Medicale College & Hospital
                 </span>
+
+
+
+                <div className=" animate-slideDown transition-all duration-300 grid grid-cols-2 gap-5 w-[50%] md:w-[25%] absolute md:bottom-20 bottom-20 right-0">
+                  <div className=" rounded-2xl"> <img className=" rounded-[5px]" src="/src/assets/images/hospital_1.jpg" alt="" /></div>
+                  <div className=" rounded-2xl "> <img className=" rounded-[5px]" src="/src/assets/images/hospital_2.jpg" alt="" /></div>
+
+
+                </div>
               </div>
+
+
+
+
+
+
+
+
+              {/* bottome apply button and logo and section  */}
+              <div className="flex justify-between items-center  absolute bottom-0">
+                <span>
+                  {/* <Logo /> */}
+                </span>
+
+
+
+                {/* apply now up pg button  */}
+                <Link to={"/Addmition/Enroll"}>
+                <button className="relative inline-flex h-10 overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+                  <span className="absolute  inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+                  <span className="inline-flex h-full w-89 cursor-pointer items-center justify-center rounded-full shadow-blue-950 shadow-lg bg-emerald-500/80 hover:bg-gray-900 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
+                    Apply Now UG / PG {">"}
+                  </span>
+                </button>
+                </Link>
+
+              </div>
+
+
             </div>
+
+
+
+
+
+
           </div>
         </div>
 
@@ -94,7 +145,11 @@ function Home() {
                 College
               </span>
 
+
+
+
               <div className="flex  gap-10 p-3 bg-amber-50/10 min-w-full rounded-[0px_15px_0px_0px]">
+                {/* activitis button   */}
                 <button className=" group flex items-center justify-center not-md:text-[10px]  px-5 py-1.5 rounded-2xl border font-bold gap-2">
                   <img
                     src="/src/assets/icon/Student_icon.png"
@@ -107,21 +162,18 @@ function Home() {
                   </span>
                 </button>
 
+
+                {/* union button  */}
                 <button className=" shadow-sm shadow-black text-nowrap flex not-md:text-[10px] items-center justify-center  border  md:px-5 px-2 py-0 rounded-2xl bg-black font-bold gap-2">
                   STUDENT UNION
                 </button>
               </div>
             </div>
 
-            <div className="h-[600px] w-full items-center gap-10 md:justify-between flex md:px-10 not-md:flex-col ">
-              {/* <div className="md:h-[400px]  md:max-w-[50%] flex items-center justify-center ">
-                <img
-                  className="animate-slideUp flex justify-center items-center md:h-[90%] w-full rounded-2xl border-b-blue-950 shadow-md shadow-blue-300"
-                  src="/src/assets/images/admin.jpg"
-                  alt="background img"
-                />
-              </div> */}
 
+
+
+            <div className="h-[600px] w-full items-center gap-10 md:justify-between flex md:px-10 not-md:flex-col ">
               <div className=" md:w-[60%] font-bold gap-5 flex flex-col ">
                 <span
                   style={{
@@ -135,6 +187,8 @@ function Home() {
                   R. G. Kar Medical College was established in 1886
                 </span>
 
+
+                {/* information box and detalis of rgkar and text button activits and union  */}
                 <span className="not-md:text-[10px] text-gray-400">
                   making it one of the oldest medical colleges in India. It was
                   named after the renowned Indian philanthropist Dr. Radha
@@ -165,7 +219,7 @@ function Home() {
             </div>
 
 
-                      {/* github dropdown arrow  */}
+            {/* github dropdown arrow  */}
             <div className=" p-10 flex gap-1 ">
               <button
                 onClick={() => {
@@ -173,7 +227,7 @@ function Home() {
                   setGoogleOpen(false)
                 }}
                 className={`flex hover:animate-slideDown duration-300 justify-center items-center shadow-sm shadow-black text-nowrap not-md:text-[10px] border pr-10 px-3 py-1 rounded-xl   transition-all d bg-black font-bold gap-2
-                ${githubOpen ? "bg-emerald-400/40 shadow-2xl backdrop-blur-3xl shadow-emerald-400": "hover:bg-gray-600"}
+                ${githubOpen ? "bg-emerald-400/40 shadow-2xl backdrop-blur-3xl shadow-emerald-400" : "hover:bg-gray-600"}
                 `}>
                 <img
                   width="20"
@@ -185,12 +239,12 @@ function Home() {
               </button>
 
 
-                  {/* Google dropdown arrow  */}
+              {/* Google dropdown arrow  */}
               <button
                 onClick={() => {
                   setGoogleOpen(!GoogleOpen)
                   setgithubOpen(false)
-                }  }
+                }}
                 className=" flex hover:animate-slideDown duration-300 justify-center items-center shadow-sm shadow-black text-nowrap not-md:text-[10px] border pr-10 px-3 py-2 rounded-xl hover:bg-gray-600  transition-all d bg-black font-bold gap-2">
                 <img
                   width="20"
@@ -200,7 +254,7 @@ function Home() {
                 />
                 Google
               </button>
-              
+
             </div>
           </div>
 
@@ -210,12 +264,12 @@ function Home() {
 
           {/*  GitHub dorpdown bar */}
           {githubOpen && (
-            <div className=" block">
+            <div ref={dropdownRef} className=" block">
               <div
                 className="bg-amber-50/20 h-100 relative -top-2.5 max-w-[1600px] 
                m-auto  rounded-b-3xl 
                 animate-slideDown
-               transition-all duration-5000 p-5">
+               transition-all duration-300 p-5">
                 <div className=" h-20  flex items-center justify-between ">
                   <span className="flex justify-center items-center text-black  font-bold text-2xl">
                     <img
@@ -234,8 +288,8 @@ function Home() {
                   <div className="p-10">
                     <button
                       className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
-                      
-                      onClick={()=>console.log("clicked")}>
+
+                      onClick={() => console.log("clicked")}>
                       SingIn
                     </button>
                   </div>
@@ -249,6 +303,15 @@ function Home() {
                   <span className="bg-linear-to-r from-gray-700 to-blue-400/50 flex p-2 ">
                     User Name :{GithubApiDeta.name}
                   </span>
+                  <span className="  h-40 w-40 rounded-2xl relative">
+                    <img src={GithubApiDeta.avatar_url} className=" rounded-3xl"  alt="" srcset="" />
+                    <img
+                      className=" absolute bottom-3 left-2"
+                      src="https://www.gstatic.com/marketing-cms/assets/images/c5/3a/200414104c669203c62270f7884f/google-wordmarks-2x.webp=n-w150-h48-fcrop64=1,00000000ffffffff-rw"
+                      alt=""
+                      width={60}
+                    />
+                  </span>
                 </div>
 
 
@@ -256,7 +319,7 @@ function Home() {
             </div>
           )}
 
-           {/*  Google dorpdown bar */}
+          {/*  Google dorpdown bar */}
           {GoogleOpen && (
             <div className=" block">
               <div
@@ -282,8 +345,8 @@ function Home() {
                   <div className="p-10">
                     <button
                       className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
-                      
-                      onClick={()=>console.log("clicked")}>
+
+                      onClick={() => console.log("clicked")}>
                       SingIn
                     </button>
                   </div>
@@ -297,6 +360,15 @@ function Home() {
                   <span className="bg-linear-to-r from-gray-700 to-blue-400/50 flex p-2 ">
                     User Name :{GithubApiDeta.name}
                   </span>
+                   <span className="  h-40 w-40 rounded-2xl relative">
+                    <img src={GithubApiDeta.avatar_url} className=" rounded-3xl"  alt="" srcset="" />
+                    <img
+                      className=" absolute bottom-3 left-2"
+                      src="https://www.gstatic.com/marketing-cms/assets/images/c5/3a/200414104c669203c62270f7884f/google-wordmarks-2x.webp=n-w150-h48-fcrop64=1,00000000ffffffff-rw"
+                      alt=""
+                      width={60}
+                    />
+                  </span>
                 </div>
 
 
@@ -307,24 +379,24 @@ function Home() {
 
 
 
-{/* Doctor anime and about Hospital 2 color grid area  */}
+          {/* Doctor anime and about Hospital 2 color grid area  */}
           <div className=" ">
-            <div 
-            className=" max-w-[1600px] m-auto h-[500px] mt-1.5 grid grid-cols-2 relative">
+            <div
+              className=" max-w-[1600px] m-auto h-[500px] mt-1.5 grid grid-cols-2 relative">
               <div className="grid w-full  rounded-2xl overflow-hidden">
-              <div
-              className="  relative bg-[linear-gradient(185deg,rgba(255,145,0,1)_0%,rgba(237,221,83,1)_100%)]">
+                <div
+                  className="  relative bg-[linear-gradient(185deg,rgba(255,145,0,1)_0%,rgba(237,221,83,1)_100%)]">
 
+                </div>
+                <div
+                  className=" bg-[linear-gradient(90deg,rgba(136,0,255,1)_0%,rgba(255,0,225,1)_100%)] overflow-hidden ">
+                  <img
+                    className="transition-transform duration-300 object-cover object-bottom-right  absolute  h-[370px] not-md:w-[400px]  md:h-[500px] bottom-0 "
+                    src="/src/assets/images/anime_doctor.png" alt="" />
+                </div>
               </div>
-              <div 
-              className=" bg-[linear-gradient(90deg,rgba(136,0,255,1)_0%,rgba(255,0,225,1)_100%)] overflow-hidden ">
-                  <img 
-                  className="transition-transform duration-300 object-cover object-bottom-right  absolute  h-[370px] not-md:w-[400px]  md:h-[500px] bottom-0 " 
-                  src="/src/assets/images/anime_doctor.png" alt=""  />                 
-              </div>
-              </div>
-              <div 
-              className=" flex items-center">
+              <div
+                className=" flex items-center">
                 <span className=" not-md:text-[12px] m-5 text-gray-300 font-bold  text-2xl">RG Kar Medical College & Hospital stands as one of the most trusted pillars of healthcare, delivering advanced medical treatment with compassion and dedication. With a legacy of excellence and a team of experienced doctors, nurses, and medical professionals, we are committed to providing world-class care to every patient. Our modern facilities, state-of-the-art diagnostics, and 24×7 emergency services ensure that quality treatment is always within reach. At RG Kar, we believe in healing with empathy—where every life matters, every patient receives personal attention, and every step of care is guided by integrity and expertise.</span>
               </div>
             </div>
@@ -333,24 +405,40 @@ function Home() {
 
 
             <div
-            className=" max-w-[1200px] m-auto flex justify-end mt-20" >
-              <div className=" w-full h-full"
-              ><img
-                className=" object-cover flex border w-full rounded-2xl overflow-hidden border-blue-700 shadow-fuchsia-600 shadow-2xl hover:shadow-emerald-500 hover:drop-shadow-2xl"
-              src="/src/assets/Promotion/EnfenEra.png"  /></div>
+              className=" max-w-[1600px] m-auto flex flex-col justify-end mt-20 gap-10" >
+              {/* ad area  */}
+              <div className=" w-[80%] m-auto ">
+                <img
+                  className=" object-cover flex border w-full rounded-2xl overflow-hidden border-blue-700 shadow-fuchsia-600 shadow-[0px_0px_30px_2px] hover:shadow-emerald-500 hover:drop-shadow-2xl"
+                  src="/src/assets/Promotion/EnfenEra.png" />
+              </div>
+
+
+
+              
+{/* ----------------------------------- */}
+{/* the INFENERA next wave box */}
+{/* ----------------------------------------- */}
+              <div className=" w-full h-full">
+                <Infenera />
+
+              </div>
+
+
+
+            </div>
+
+
+
+
           </div>
 
 
 
-            
-          </div>
-
-
-          
 
 
         </div>
-      </div>
+      </div> {/*main dev*/}
     </>
   );
 }

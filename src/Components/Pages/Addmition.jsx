@@ -27,7 +27,7 @@ function Addmition() {
 
           <div className=" p-5">
             <NavLink
-                to="/"
+                to="Enroll"
                 className={({ isActive }) =>
                   ` ${
                     isActive

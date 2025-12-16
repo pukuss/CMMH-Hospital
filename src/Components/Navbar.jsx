@@ -1,10 +1,42 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { RG_Kar_Hospital_lgo, MenuBar } from "../assets/Assets";
 import { NavLink } from "react-router-dom";
+import { LucideMenu, User2 } from "lucide-react";
+import Account from "./page_comp/enroll/Account";
+
+
 
 function Navbar() {
   const [open, setopen] = useState(false);
   const [clicked, setClicked] = useState(false);
+  const RefMenuBar = useRef(null);
+  const UserTheme = <User2 />
+
+
+
+useEffect(() => {
+
+  function handleClickOutside(event) {
+   
+   
+   
+    // click outside menu
+    if (RefMenuBar.current.contains(event.target)) {
+      setopen(false);
+    }
+  }
+
+  if (open) {
+    document.addEventListener("mousedown", handleClickOutside);
+  }
+
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside);
+  };
+
+}, [open]);
+
+
 
   const menuclass =
     "font-bold text-[10px] hover:border hover:text-emerald-500 flex bg-gradient-to-r from-slate-900 to-slate-700 p-2 cursor-pointer rounded-[10px]";
@@ -15,7 +47,7 @@ function Navbar() {
   return (
     <>
       {/* Navbar */}
-      <nav className=" overflow-hidden fixed w-screen h-10 md:h-16 flex  justify-center items-center bg-gray-500/10  z-50 backdrop-blur-lg">
+      <nav  className=" overflow-hidden fixed w-screen h-10 md:h-16 flex  justify-center items-center bg-gray-500/10  z-50 backdrop-blur-lg">
         <div className="items-center relative h-full w-[1600px] flex justify-between px-5">
           {/* Logo */}
           <div className="w-24 ">
@@ -69,20 +101,39 @@ function Navbar() {
             <li className={Dex_menu}>ABOUT US</li>
           </ul>
 
-          <div className="flex justify-between items-center gap-5">
+          <div className="flex justify-between items-center gap-5  md:w-50">
+           {/* ----------------------------------------- */}
+           {/* LogIn LOgOut Button  */}
+           {/* ------------------------------------- */}
+           
             <button
-              onClick={() => setClicked(true)}
-              className={`text-sm font-bold px-4 py-1 rounded-[10px] not-md:h-7 hover:border-b-blue-500 hover:scale-x-110 transition-all duration-300 ${
-                clicked ? "bg-green-500" : "bg-red-500 border-r-red-700 shadow-2xl shadow-red-600"
+              onClick={() => setClicked((prev)=> !prev)}
+
+              className={`text-sm flex justify-center items-center font-bold px-4 not-md:py-4 py-1.5 rounded-[10px] not-md:h-7 hover:px-8 transition-all duration-300 ${
+                clicked ? "border-red-600 border shadow-2xl bg-red-600/30 shadow-red-600 " : " border-green-400 border hover:bg-green-500/20 text-green-500 shadow-2xl shadow-green-600"
               }`}>
-              LogIn
+                
+              {clicked ? "LogOut": (<div className="flex gap-3 items-center justify-center ">
+                Get Start <User2 
+                  className="border border-amber-50 bg-amber- rounded-full"
+                  size={25}
+                  color="white"/>
+              </div>)}
             </button>
 
+            { clicked &&  (
+              <Account /> 
+            )}
+
+           
+           
+           
             {/* Hamburger */}
             <button
               onClick={() => setopen(!open)}
               className="md:hidden h-6 w-6">
-              <img src={MenuBar} alt="" />
+              {/* <img src={MenuBar} alt="" /> */}
+              <LucideMenu />
             </button>
           </div>
         </div>

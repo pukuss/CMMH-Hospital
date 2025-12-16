@@ -9,7 +9,11 @@ import Addmition from './Components/Pages/Addmition.jsx'
 import Academic from './Components/Pages/Academic.jsx'
 
 import useGithubApi from './Components/Api/Github.js'
+import Registration from './Components/Pages/Registration.jsx'
 
+
+// import Enrolment from './Components/Pages/Sub_Page/subpage.js'
+import Enrolment from './Components/Pages/Sub_Page/Enrolment.jsx'
 
 
 
@@ -18,16 +22,26 @@ const router = createBrowserRouter([
     element : <Layout/>,
     
     children: [{
+      // loader:useGithubApi,
       path: "",
       element: <Home />
     },
     {
       path: "Addmition",
-      element: <Addmition /> 
+      element: <Addmition />
     },
+      {
+      path: "/Addmition/Enroll",
+      element: <Enrolment />
+      },
+    
     {
       path: "Academic",
       element: <Academic />
+    },
+    {
+      path: "Registration",
+      element: <Registration />
     }
   ]
   },
