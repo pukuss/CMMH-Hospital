@@ -78,7 +78,7 @@ function Home() {
                   //   backgroundClip: "text",
                   //   color: "transparent",
                   // }}
-                  className=" not-md:text-[30px] text-7xl font-bold ">
+                  className=" not-md:text-[25px] text-7xl font-bold font-BBH">
                   RG Kar Medicale College & Hospital
                 </span>
 
@@ -109,9 +109,9 @@ function Home() {
 
                 {/* apply now up pg button  */}
                 <Link to={"/Addmition/Enroll"}>
-                <button className="relative inline-flex h-10 overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+                <button className="relative inline-flex h-10 overflow-hidden rounded-full p-0.5 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
                   <span className="absolute  inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-                  <span className="inline-flex h-full w-89 cursor-pointer items-center justify-center rounded-full shadow-blue-950 shadow-lg bg-emerald-500/80 hover:bg-gray-900 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
+                  <span className=" font-BBH inline-flex h-full w-89 cursor-pointer items-center justify-center rounded-full shadow-blue-950 shadow-lg bg-emerald-500/80 hover:bg-gray-900 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
                     Apply Now UG / PG {">"}
                   </span>
                 </button>
@@ -142,7 +142,7 @@ function Home() {
           bg-[url('https://images.pexels.com/photos/1303081/pexels-photo-1303081.jpeg')] 
           bg-cover bg-center  max-w-[1600px] m-auto rounded-2xl relative">
             <div className="  flex flex-col items-start w-full relative">
-              <span className="p-2 font-bold md:text-2xl  ">
+              <span className="p-2 font-extrabold md:text-2xl text-[2.5vw] font-alluser  text-gray-400">
                 Information of NEET PG Admission-2025 of R. G. Kar Medical
                 College
               </span>
@@ -412,7 +412,7 @@ function Home() {
               <div className=" w-[80%] m-auto ">
                 <img
                   className=" object-cover flex border w-full rounded-2xl overflow-hidden border-blue-700 shadow-fuchsia-600 shadow-[0px_0px_30px_2px] hover:shadow-emerald-500 hover:drop-shadow-2xl"
-                  src="/public/Promotion/EnfenEra.png" />
+                  src="/Promotion/EnfenEra.png" />
               </div>
 
 

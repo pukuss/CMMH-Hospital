@@ -144,7 +144,7 @@ useEffect(() => {
         <div className="w-50 flex fixed right-2 top-10 mt-2 z-40 transition-all duration-1000 " 
           // onClick={(e) => e.stopPropagation()}
         >
-          <ul className="gap-1 md:hidden w-full rounded-lg transition-all duration-1000 p-5 flex flex-col bg-gradient-to-r from-black/70 to-green-600/50">
+          <ul className="gap-1 md:hidden w-full rounded-lg transition-all duration-1000 p-5 flex flex-col bg-linear-to-r from-black/70 to-green-600/50">
             <li>
               {" "}
               {/*Home*/}

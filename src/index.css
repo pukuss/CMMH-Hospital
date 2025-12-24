@@ -15,12 +15,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-  /* margin: 0;
-  display: flex;
-  min-width: 320px;
-  min-height: 100vh; */
-}
+
 
 
 
@@ -55,8 +50,18 @@ button:focus-visible {
   font-family: "knewave";
   src: url('./assets/font/Knewave-Regular.ttf');
 }
+@font-face {
+  font-family: BBH;
+  src: url(/public/font/BBHBartle-Regular.ttf);
+}
+@font-face {
+  font-family: alluser;
+  src: url(/public/font/Hanuman-VariableFont_wght.ttf);
+}
 @theme {
   --font-knews: "knewave" , sans-serif;
+  --font-BBH: "BBH" , "sans-serif";
+  --font-alluser: "alluser" , "sans-serif"
 }
 
 

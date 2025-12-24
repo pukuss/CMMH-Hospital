@@ -48,7 +48,7 @@ const Courses =[
         <>
 
             {/* From  */}
-            <div className=' border bg-amber-900/0 flex justify-start w-full font-bold'>
+            <div className=' border bg-amber-900/0 flex justify-start w-full font-bold text-[16px] not-md:text-[13px]'>
                 <form action="" className='w-full p-5 flex flex-col gap-6'>
 
     {/* -----------------------Name----------------------------- */}
@@ -120,7 +120,7 @@ const Courses =[
 {/* --------------------------Nationality---------------------------- */}
                     <div className=' w-full flex justify-between items-center pl-2'>   {/* Hospital Name */}
                         <label htmlFor="Nationality">Nationality : </label>
-                        <select className='border-b pr-60'
+                        <select className='border-b'
                             name="" id="Nationality" >
                             <option value="Nationality">Nationality</option>
                             <option value="">Indian</option>

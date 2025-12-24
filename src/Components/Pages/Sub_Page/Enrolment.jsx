@@ -22,7 +22,7 @@ function Enrolment() {
 
       <div className=' w-full h-screen bg-cover bg-center relative top-10 md:top-16' style={{
         backgroundImage:
-          "url('https://images.pexels.com/photos/230744/pexels-photo-230744.jpeg')",
+          "url('https://images.pexels.com/photos/1303081/pexels-photo-1303081.jpeg')",
       }}>
         <div className='border relative  max-w-[1600px] m-auto'>
 
