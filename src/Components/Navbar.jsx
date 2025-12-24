@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { RG_Kar_Hospital_lgo, MenuBar } from "../assets/Assets";
+import { RG_Kar_Hospital_lgo,} from "../assets/Assets";
 import { NavLink } from "react-router-dom";
 import { LucideMenu, User2 } from "lucide-react";
 import Account from "./page_comp/enroll/Account";

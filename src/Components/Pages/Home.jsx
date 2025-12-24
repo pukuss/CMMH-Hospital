@@ -138,7 +138,9 @@ function Home() {
 
         {/* Main containar Of Home Page   */}
         <div className=" h-screen w-full m-auto mt-5 not-md:p-2">
-          <div className=" z-10 bg-[url('https://images.pexels.com/photos/1303081/pexels-photo-1303081.jpeg')] bg-cover bg-center  max-w-[1600px] m-auto rounded-2xl relative">
+          <div className=" z-10 
+          bg-[url('https://images.pexels.com/photos/1303081/pexels-photo-1303081.jpeg')] 
+          bg-cover bg-center  max-w-[1600px] m-auto rounded-2xl relative">
             <div className="  flex flex-col items-start w-full relative">
               <span className="p-2 font-bold md:text-2xl  ">
                 Information of NEET PG Admission-2025 of R. G. Kar Medical
@@ -410,7 +412,7 @@ function Home() {
               <div className=" w-[80%] m-auto ">
                 <img
                   className=" object-cover flex border w-full rounded-2xl overflow-hidden border-blue-700 shadow-fuchsia-600 shadow-[0px_0px_30px_2px] hover:shadow-emerald-500 hover:drop-shadow-2xl"
-                  src="/src/assets/Promotion/EnfenEra.png" />
+                  src="/public/Promotion/EnfenEra.png" />
               </div>
 
 
