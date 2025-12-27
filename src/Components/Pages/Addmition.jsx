@@ -20,7 +20,7 @@ function Addmition() {
           <div 
           className=" h-10 w-full flex justify-between px-3 items-center">
             {/* Top nav bar explore and logo ------------------------------>>>>>>>>>> */}
-            <div>
+            <div className="not-md:text-[12px]">
               <span className="font-BBH ">
                 INFEN
               </span>
@@ -35,23 +35,25 @@ function Addmition() {
                 className=" bg-purple-600/50 px-5 gap-3 py-1 flex items-center font-alluser   font-extrabold"
                 type="button">Explore More  <ArrowRight size={20} />
               </button>
-             
             </div>
           </div>
 
 
-          <div
-          className="border h-50 md:p-5 max-w-[1600px] m-auto">
 
-            <div className=" h-full w-full grid grid-cols-2 ">
+
+{/* -------------Herocu section--------------------->> */}
+          <div
+          className="border h-[80vh] md:p-5 max-w-[1600px] m-auto ">
+
+            <div className=" h-full w-full grid md:grid-cols-2 ">
               <div className="border flex items-center h-full w-full not-md:justify-center">
                 <div className="flex flex-col not-md:justify-center items-center">
-                  <span className="font-alluser font-extrabold text-white md:text-3xl">ADDMITION OPEN</span>
-                  <span className="font-extrabold text-gray-500/50">RGkar Collenge & Hospital </span>
+                  <span className="font-alluser animate-slideDown font-extrabold text-4xl text-white md:text-5xl">ADDMITION OPEN</span>
+                  <span className="font-extrabold animate-slideDown text-purple-500">RGkar Collenge & Hospital </span>
                 </div>
               </div>
 
-              <div className="border w-full grid grid-rows-2 gap-1">
+              <div className="border animate-slideDown w-full grid grid-rows-2 gap-1">
                 <div className="bg-white"></div>
                 <div className="bg-white"></div>
               </div>
