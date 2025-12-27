@@ -10,31 +10,28 @@ function Navbar() {
   const [open, setopen] = useState(false);
   const [clicked, setClicked] = useState(false);
   const RefMenuBar = useRef(null);
-  const UserTheme = <User2 />
+  // const UserTheme = <User2 />
 
 
 
-useEffect(() => {
 
-  function handleClickOutside(event) {
-   
-   
-   
-    // click outside menu
-    if (RefMenuBar.current.contains(event.target)) {
-      setopen(false);
+  useEffect(() => {
+    function handleClickOutside(event) {
+      console.log(RefMenuBar.current.contains(event.target));
+      
+      if (RefMenuBar.current && !RefMenuBar.current.contains(event.target)) {
+        setopen(false); // auto-close
+      }
     }
-  }
 
-  if (open) {
-    document.addEventListener("mousedown", handleClickOutside);
-  }
+    if (open) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
 
-  return () => {
-    document.removeEventListener("mousedown", handleClickOutside);
-  };
-
-}, [open]);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [open]);
 
 
 
@@ -141,7 +138,7 @@ useEffect(() => {
 
       {/* Mobile Menu */}
       {open && (
-        <div className="w-50 flex fixed right-2 top-10 mt-2 z-40 transition-all duration-1000 " 
+        <div ref={RefMenuBar} className="w-50 flex fixed right-2 top-10 mt-2 z-40 transition-all duration-1000 " 
           // onClick={(e) => e.stopPropagation()}
         >
           <ul className="gap-1 md:hidden w-full rounded-lg transition-all duration-1000 p-5 flex flex-col bg-linear-to-r from-black/70 to-green-600/50">
