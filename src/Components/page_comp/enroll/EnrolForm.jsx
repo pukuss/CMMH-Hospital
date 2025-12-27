@@ -1,6 +1,6 @@
 import React, { useEffect, useEffectEvent, useState } from 'react'
 import useAccount from './accountContex'
-import { Ban, ShoppingCart, } from 'lucide-react';
+import { Ban, Contact, ShoppingCart, } from 'lucide-react';
 import { div } from 'framer-motion/client';
 
 
@@ -8,11 +8,11 @@ const Courses =[
         "NEET Course" , "mbbs"  , "d.farma" , "gnm nursing" 
     ]
 
-
+   
 
     
 
-    function EnrolForm() {
+    function EnrolForm({SEND_DETA}) {
         const [BamkOffer, setBamkOffer] = useState(false)
         const [usedBankOffer ,setusedBankOffer ] = useState(false)
 
@@ -21,7 +21,13 @@ const Courses =[
         const [User_Enroll_deta , setUser_Enroll_deta] = useState({
             User_Name : "",
             Father_Name : "",
-            Addhar_UID : ""
+            Addhar_UID : "",
+            HSP_Name : "RG Kar Medicale College & Hospital ",
+            Contact_Number : "+91",
+            nationility : "",
+            category : "",
+            geder:"",
+            course : "",
 
         })
         
@@ -84,22 +90,26 @@ const Courses =[
 
     {/*----------------- Addhar No ------------------------*/}
                     <div className=' w-full flex justify-between items-center pl-2 '>  
-                        <label htmlFor="addhar"> Addhar No: </label>
+                        <label htmlFor="Addhar_UID"> Addhar No: </label>
                         <input
                             className='border-b px-1 md:w-[25vw] w-[50vw] '
                             type="text"
+                            name='Addhar_UID'
                             inputMode='numeric'
                             maxLength={12}
+                            onChange={HandelForm}
                             placeholder="1234 5678 9012"
-                            id="addhar" />
+                            id="Addhar_UID" />
                     </div>
+
+
     {/*---------------------- Hospital Name------------------------------ */}
                     <div className=' w-full flex justify-between  items-center pl-2'>  
                         <label htmlFor="HSP">Hospital Name / ID : </label>
                         <input
                             className='border-b px-1 md:w-[25vw] w-[50vw] '
                             type="text"
-                            name=""
+                            name="HSP_Name"
                             readOnly
                             value={"RG Kar Medicale College & Hospital "}
                             id="HSP" />
@@ -107,38 +117,44 @@ const Courses =[
 
         {/* ---------------------contact Number---------------------------- */}
                     <div className=' w-full flex justify-between items-center pl-2'>   {/* Hospital Name */}
-                        <label htmlFor="call">Contact Number : </label>
+                        <label htmlFor="Contact_Number">Contact Number : </label>
                         <input
                             className='border-b px-1 md:w-[25vw] w-[50vw] '
                             type="text"
-                            name="number"
+                            value={User_Enroll_deta.Contact_Number}
+                            name="Contact_Number"
                             placeholder='Phone Number'
-                            // value={}
-                            id="call" />
+                            onChange={HandelForm}
+                            id="Contact_Number" />
                     </div>
 
 {/* --------------------------Nationality---------------------------- */}
                     <div className=' w-full flex justify-between items-center pl-2'>   {/* Hospital Name */}
                         <label htmlFor="Nationality">Nationality : </label>
                         <select className='border-b'
-                            name="" id="Nationality" >
+                            onChange={HandelForm}
+                            name="nationility" 
+                            id="Nationality" >
                             <option value="Nationality">Nationality</option>
-                            <option value="">Indian</option>
-                            <option value="">BanglaDesh</option>
-                            <option value="">Nepal</option>
+                            <option value="india">Indian</option>
+                            <option value="bangladesh">BanglaDesh</option>
+                            <option value="nepal">Nepal</option>
+                            <option value="italy">Italy</option>
                         </select>
                     </div>
 
 {/* -------------------------Category-------------------------------------- */}
-                    <div className=' w-full flex justify-between items-center pl-2'>   {/* Hospital Name */}
+                    <div className=' w-full flex not-md:text-[12px] justify-between items-center pl-2'>   {/* Hospital Name */}
                         <label htmlFor="Category">Category / SC ST OBC : </label>
-                        <select className='border-b pr-20 p-1'
-                            name="" id="Nationality" >
-                            <option value="Nationality">SC / ST / OBC / Generl</option>
-                            <option value="">SC</option>
-                            <option value="">ST</option>
-                            <option value="">OBC</option>
-                            <option value="">GENERAL</option>
+                        <select className='border-b  p-1'
+                            name="category"
+                            onChange={HandelForm}
+                            id="Category" >
+                            <option value="none">SC / ST / OBC / Generl</option>
+                            <option value="SC">SC</option>
+                            <option value="ST">ST</option>
+                            <option value="OBC">OBC</option>
+                            <option value="GENERAL">GENERAL</option>
                         </select>
                     </div>
 
@@ -150,20 +166,37 @@ const Courses =[
                             <label htmlFor="">Gender :</label>
                         </div>
 
-                        <div className='flex gap-4'>
-                            <div className='flex gap-1.5'>
-                                <label htmlFor="male">Male</label>
-                                <input type="radio" name="" id="" />
-                            </div>
-                            <div className='flex gap-1.5'>
-                                <label htmlFor="female">Female</label>
-                                <input type="radio" name="" id="" />
-                            </div>
-                            <div className='flex gap-1.5'>
-                                <label htmlFor="custom">Custom</label>
-                                <input type="radio" name="" id="" />
+                        <div className='flex gap-4 items-center justify-center'>
+                            <div className='flex items-center gap-1' >
+                                <input className='flex items-center cursor-pointer:'
+                                type="radio" 
+                                name="gender"
+                                value="male"
+                                // checked={gender === male}
+                                onChange={HandelForm}
+                                id="" />
+                                <label htmlFor="">Male</label>
                             </div>
                             
+                             <div className='flex items-center gap-1' >
+                                <input className='flex items-center cursor-pointer:'
+                                type="radio" 
+                                name="gender"
+                                value="female"
+                                onChange={HandelForm}
+                                id="" />
+                                <label htmlFor="">Female</label>
+                            </div>
+
+                             <div className='flex items-center gap-1' >
+                                <input className='flex items-center cursor-pointer:'
+                                type="radio" 
+                                name="gender" 
+                                value="custom"
+                                onChange={HandelForm}
+                                id="" />
+                                <label htmlFor="">Custom</label>
+                            </div>
                         </div>
                     </div>
 
@@ -174,46 +207,51 @@ const Courses =[
                         
                         <select
                             className='bg-green-500/20 rounded-[7px] p-1.5 transition-all delay-300 hover:border border-green-400'
+                            onChange={HandelForm}
+                            name="course"
                             onClick={()=>{
                                 if(!usedBankOffer)
                                     setBamkOffer(true)
                                     setusedBankOffer(true)
                                 
                             }}
-                            name="" id="course">
+                            id="course">
 
                                 {Courses.map((element)=>(
                                     <option
                                     className='font-bold bg-gray-700 rounded-2xl hover:bg-green-500/30'
                                     key={element} 
+                                    name="course"
                                     value={element}>
                                     {element.toUpperCase()}</option>
                                 ))}                            
                         </select>
+
+                        <button type="button" onClick={()=>SEND_DETA(User_Enroll_deta)} >button</button>
                     </div>
+
 
 
 {/* ------------------------Pop up Banking Offer & Discount Offer ------------------------------ */}
 
                     { BamkOffer && (
-                        <div className=' group border h-20 border-purple-500 bg-purple-500/10 rounded-[10px]'>
+                        <div className=' group border h-20 border-purple-500 bg-purple-500/10 rounded-[10px] not-md:text-[12px]'>
                             <div className=' group flex  justify-between'>
-                                <div className='group flex gap-2 px-4 p-1 rounded-lg hover:bg-green-400/20  md:w-1/2 w-[50vw] m-1 text-[12px]'>
+                                <div className='group flex gap-2 px-4 p-1 rounded-lg hover:bg-green-400/20  md:w-1/2 not-md:w-[70vw] w-[50vw] m-1 not-md:text-[10px] text-[12px]'>
                                     <span className='text-yellow-400 '> Get Descount</span>
                                     <span className='text-green-600'>UP-TO</span>
                                     <span>2,000₹  to  25,000</span>
                                 </div >
                         
                                 <Ban onClick={()=> {if(BamkOffer) setBamkOffer(false)}  }
-                                size={20} color='white' className='m-1 ' />
+                                size={18} color='white' className='m-1 ' />
                             </div>
 
                             <div className=''>
                                 <div className='flex justify-between p-2'>
-                                    <ShoppingCart />
-                                    <div className='flex gap-2'>
+                                    <ShoppingCart className='' />
+                                    <div className='flex gap-2 not-md:text-[10px] items-center'>
                                         <div className='text-red-600'>25% ON</div> {/* APi ITEM */}
-                                        <div></div>
                                         <span className='border px-3 text-green-400 text-[14px] rounded-2xl bg-purple-500/40 border-purple-600 hover:bg-purple-500' >OFFER</span>
 
                                     </div>
