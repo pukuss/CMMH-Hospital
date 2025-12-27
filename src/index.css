@@ -68,8 +68,71 @@ button:focus-visible {
 
 
 
+/* Gradient Border Wrapper */
+.gradient-border {
+  padding: 3px; /* border thickness */
+  background: linear-gradient(
+    135deg,
+    green,
+    green,
+    yellow,
+    yellow,
+    #FF1493,
+    purple,
+    purple,
+    red,
+    red
+  );
+  border-radius: 12px; /* optional */
+}
+
+/* Inner Box */
+.gradient-border .inner-box {
+  background: #000;
+  color: white;
+  padding: 20px;
+  border-radius: 10px; /* match wrapper radius */
+}
 
 
+
+
+
+
+@keyframes border-slide {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.animate-border-slide {
+  animation: border-slide 16s linear infinite; /* slower & smoother */
+  border-radius: 9999px; /* smooth rounded line */
+  box-shadow:
+    0 0 1px rgb(66,133,244),
+    0 0 1px rgb(138,43,226),
+    0 0 1px rgb(219,68,133),
+    0 0 1px rgb(66,133,244,0.6),
+    0 0 1px rgb(138,43,226,0.6),
+    0 0 1px rgb(219,68,133,0.6);/* subtle glow shadow */
+}
+
+
+
+
+/* Spinning Animation */
+@keyframes Gemeni {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Utility class for applying the spin */
+.Gemeni {
+  animation: spin 6s linear infinite; /* slow spin */
+}
 
 
 /* custom keyframes and utility classes */

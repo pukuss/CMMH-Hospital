@@ -16,6 +16,7 @@ import {
 import githubApi from "../Api/Github";
 
 import Infenera from "../page_comp/home/Infenera";
+import GemeniBar from "../page_comp/Effects/GemeniBar";
 
 function Home() {
   // Github Dropdown
@@ -227,15 +228,38 @@ function Home() {
             </div>
           </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/* ========================GITHUB OPEN=============================== */}
+{/* ================================================================== */}
+
           {/*  GitHub dorpdown bar */}
           {githubOpen && (
             <div ref={dropdownRef} className=" block">
               <div
-                className="bg-black/50 h-100 relative -top-2.5 max-w-[1600px] 
+                className="bg-black/50 h-100 relative -top-2.5 max-w-[1600px] multi-color-border-box
                 m-auto  rounded-b-3xl 
                 animate-slideDown
                 transition-all duration-300 p-5">
+                  <div className=""><GemeniBar /></div>
                 <div className=" h-20  flex items-center justify-between  ">
+                  
                   <span className="flex justify-center items-center text-black  font-bold text-2xl">
                     <img
                       width="35"
@@ -248,7 +272,11 @@ function Home() {
                       alt=""
                       width={50}
                     />
+                    
                   </span>
+
+
+
 
                   <div className="pr-3">
                     <button
@@ -259,20 +287,18 @@ function Home() {
                   </div>
                 </div>
 
-
-
-
-
                 {/* Dropdown box content-------------------------------------------------->>>>>>>>>>>>>>>>>>>>>>  */}
                 <div className=" rounded-2xl w-full relative  flex items-start justify-center  flex-col">
                   <div className="flex not-md:text-[12px] text-[16px] flex-col w-full">
-                    
-                    <div className="h-10 w-10 border-4 rounded-full m-3">
+                    <div className="h-20 w-20 sm:h-25 sm:w-25 p-1 rounded-full m-3 "  style={{
+    background:
+      "linear-gradient(135deg, green,green,yellow,yellow,#FF1493,purple,purple,red,red )",
+  }}>
                       {GithubApiDeta.avatar_url ? (
-                        <span className="  h-10 w-10 rounded-2xl relative">
+                        <span className="  h-25 w-25 rounded-full relative " >
                           <img
                             src={GithubApiDeta.avatar_url}
-                            className=" rounded-3xl"
+                            className=" rounded-full"
                             alt=""
                             srcset=""
                           />
@@ -285,29 +311,27 @@ function Home() {
                         </span>
                       ) : (
                         <User />
-                      )}
-                    </div>
-                    
-                    <div className="w-full flex justify-center flex-col  gap-2">
-                    <span className=" font-bold uppercase bg-linear-to-r from-white/20 to-black/30 rounded-[10px] flex p-2 hover:bg-blue-600">
-                      Github ID :{GithubApiDeta.id}
-                    </span>
+                      )}</div>
 
-                    <span className=" font-bold uppercase bg-linear-to-r from-white/20 to-black/30 rounded-[10px] flex p-2 ">
-                      User Name : {GithubApiDeta.name}
-                    </span>
+
+
+
+
+
+                    <div className="w-full flex justify-center flex-col  gap-2">
+                      <span className=" font-bold uppercase bg-linear-to-r from-white/20 to-black/30 rounded-[10px] flex p-2 hover:bg-blue-600">
+                        Github ID :{GithubApiDeta.id}
+                      </span>
+
+                      <span className=" font-bold uppercase bg-linear-to-r from-white/20 to-black/30 rounded-[10px] flex p-2 ">
+                        User Name : {GithubApiDeta.name}
+                      </span>
                     </div>
-                    
                   </div>
                 </div>
-
-
               </div>
             </div>
           )}
-
-
-
 
           {/*  Google dorpdown bar------------=============================================>>>>>>>>>>>>>>> */}
           {GoogleOpen && (
