@@ -48,8 +48,8 @@ const Courses =[
         <>
 
             {/* From  */}
-            <div className=' border bg-amber-900/0 flex justify-start w-full font-bold text-[16px] not-md:text-[13px]'>
-                <form action="" className='w-full p-5 flex flex-col gap-6'>
+            <div className=' border bg-amber-900/0 flex justify-start w-full font-bold text-[16px] not-md:text-[13px] overflow-hidden'>
+                <form action="" className='w-full flex flex-col gap-6 p-5'>
 
     {/* -----------------------Name----------------------------- */}
                     <div className='  w-full flex justify-between items-center pl-2' >  {/* name  */}

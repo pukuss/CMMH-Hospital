@@ -17,7 +17,7 @@ function Navbar() {
 
   useEffect(() => {
     function handleClickOutside(event) {
-      console.log(RefMenuBar.current.contains(event.target));
+      // console.log(RefMenuBar.current.contains(event.target));
       
       if (RefMenuBar.current && !RefMenuBar.current.contains(event.target)) {
         setopen(false); // auto-close
