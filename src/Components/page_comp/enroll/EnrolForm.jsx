@@ -54,14 +54,14 @@ const Courses =[
         <>
 
             {/* From  */}
-            <div className=' border bg-amber-900/0 flex justify-start w-full font-bold text-[16px] not-md:text-[13px] overflow-hidden'>
+            <div className=' bg-amber-900/0 flex justify-start w-full font-bold text-[16px] not-md:text-[13px] overflow-hidden'>
                 <form action="" className='w-full flex flex-col gap-6 p-5'>
 
     {/* -----------------------Name----------------------------- */}
                     <div className='  w-full flex justify-between items-center pl-2' >  {/* name  */}
                         <label htmlFor="username">Name : </label>
                         <input
-                            className='border-b  px-1 md:w-[25vw] not-md:w-[50vw] bg-none '
+                            className='border-b  px-1 md:w-[25vw] not-md:w-[50vw] bg-none outline-none'
                             type="text"
                             placeholder='NAME'
                             name="User_Name"
@@ -75,7 +75,7 @@ const Courses =[
                     <div className='  w-full flex justify-between items-center pl-2' >  {/* name  */}
                         <label htmlFor="Father_name">Father Name : </label>
                         <input
-                            className='border-b px-1 md:w-[25vw] w-[50vw] bg-none '
+                            className='border-b px-1 md:w-[25vw] w-[50vw] bg-none outline-0'
                             type="text"
                             placeholder='Father Name'
                             name="Father_Name"s
@@ -83,16 +83,13 @@ const Courses =[
                             id="Father_name" />
                     </div>
 
-{/* ---------------------------NEET UID ----------------------------------- */}
-                    
-
 
 
     {/*----------------- Addhar No ------------------------*/}
                     <div className=' w-full flex justify-between items-center pl-2 '>  
                         <label htmlFor="Addhar_UID"> Addhar No: </label>
                         <input
-                            className='border-b px-1 md:w-[25vw] w-[50vw] '
+                            className='border-b px-1 md:w-[25vw] w-[50vw] outline-0'
                             type="text"
                             name='Addhar_UID'
                             inputMode='numeric'
@@ -107,7 +104,7 @@ const Courses =[
                     <div className=' w-full flex justify-between  items-center pl-2'>  
                         <label htmlFor="HSP">Hospital Name / ID : </label>
                         <input
-                            className='border-b px-1 md:w-[25vw] w-[50vw] '
+                            className='border-b px-1 md:w-[25vw] w-[50vw]  outline-0'
                             type="text"
                             name="HSP_Name"
                             readOnly
@@ -119,7 +116,7 @@ const Courses =[
                     <div className=' w-full flex justify-between items-center pl-2'>   {/* Hospital Name */}
                         <label htmlFor="Contact_Number">Contact Number : </label>
                         <input
-                            className='border-b px-1 md:w-[25vw] w-[50vw] '
+                            className='border-b px-1 md:w-[25vw] w-[50vw]  outline-0'
                             type="text"
                             value={User_Enroll_deta.Contact_Number}
                             name="Contact_Number"
@@ -131,7 +128,7 @@ const Courses =[
 {/* --------------------------Nationality---------------------------- */}
                     <div className=' w-full flex justify-between items-center pl-2'>   {/* Hospital Name */}
                         <label htmlFor="Nationality">Nationality : </label>
-                        <select className='border-b'
+                        <select className='border-b outline-0'
                             onChange={HandelForm}
                             name="nationility" 
                             id="Nationality" >
@@ -146,7 +143,7 @@ const Courses =[
 {/* -------------------------Category-------------------------------------- */}
                     <div className=' w-full flex not-md:text-[12px] justify-between items-center pl-2'>   {/* Hospital Name */}
                         <label htmlFor="Category">Category / SC ST OBC : </label>
-                        <select className='border-b  p-1'
+                        <select className='border-b  p-1 outline-0'
                             name="category"
                             onChange={HandelForm}
                             id="Category" >
@@ -168,14 +165,14 @@ const Courses =[
 
                         <div className='flex gap-4 items-center justify-center'>
                             <div className='flex items-center gap-1' >
-                                <input className='flex items-center cursor-pointer:'
+                                <input className='flex items-center outline-0 cursor-pointer accent-green-600'
                                 type="radio" 
                                 name="gender"
                                 value="male"
                                 // checked={gender === male}
                                 onChange={HandelForm}
-                                id="" />
-                                <label htmlFor="">Male</label>
+                                id="male" />
+                                <label htmlFor="male">Male</label>
                             </div>
                             
                              <div className='flex items-center gap-1' >
@@ -184,8 +181,8 @@ const Courses =[
                                 name="gender"
                                 value="female"
                                 onChange={HandelForm}
-                                id="" />
-                                <label htmlFor="">Female</label>
+                                id="female" />
+                                <label htmlFor="female">Female</label>
                             </div>
 
                              <div className='flex items-center gap-1' >
@@ -194,10 +191,23 @@ const Courses =[
                                 name="gender" 
                                 value="custom"
                                 onChange={HandelForm}
-                                id="" />
-                                <label htmlFor="">Custom</label>
+                                id="custom" />
+                                <label htmlFor="custom">Custom</label>
                             </div>
                         </div>
+                    </div>
+
+
+
+{/* ---------------------------NEET UID ----------------------------------- */}
+                    <div className='p-2 w-full flex justify-between items-center pl-2 -bg-conic-270 bg-sky-300/20 rounded-lg'>
+                        <label htmlFor="">NEET UID SCORE : </label>
+                        <input
+                            className='border border-emerald-600 rounded-2xl px-1 w-[50vw] bg-green-400/10 pl-4 p-1 md:w-[25vw]  outline-0'
+                            placeholder='NEET UID'
+                            type="text" 
+                            name="" 
+                            id="" />
                     </div>
 
 
@@ -206,7 +216,7 @@ const Courses =[
                         <label htmlFor="course">Courses : </label>
                         
                         <select
-                            className='bg-green-500/20 rounded-[7px] p-1.5 transition-all delay-300 hover:border border-green-400'
+                            className='bg-green-500/20 rounded-[7px] p-1.5 outline-0 transition-all delay-300 hover:border border-green-400'
                             onChange={HandelForm}
                             name="course"
                             onClick={()=>{

@@ -11,6 +11,8 @@ import EnrolForm from '../../page_comp/enroll/EnrolForm'
  
 function Enrolment() {
   const [user , setuser] = useState("dsd")
+  
+  
   function GET_DETA_FROMENROLL(deta){
     console.log("parent deta", deta);
     
@@ -21,10 +23,12 @@ function Enrolment() {
 
   return (
     <AccountProvider value={{user}} >
-       <div className=' w-full h-screen bg-cover bg-center relative top-10 md:top-16' style={{
+       <div className=' w-full h-screen bg-cover bg-center relative top-10 md:top-16 ' style={{
         backgroundImage:
-          "url('https://images.pexels.com/photos/35360782/pexels-photo-35360782.jpeg')",
+          "url('https://images.pexels.com/photos/35360782/pexels-photo-35360782.jpeg')", 
       }}>
+        {/* OPTIMISE AND COMPRESSS CODE =================================
+        >>> ?w=1600&auto=compress&cs=tinysrgb */}
         <div 
         className='border max-w-[1600px] m-auto'>
             <div className='bg-gray-700/30  rounded-[5px] flex justify-center not-md:flex-wrap not-sm:flex-wrap md:m-10 sm:m-2 m-2 '>
@@ -32,8 +36,8 @@ function Enrolment() {
             
             
             {/* WHITE SPACE AREA ----------------------------------->>>>>>>>>>>>>> */}
-            <div className=' relative  backdrop-blur-sm bg-amber-50/10 border w-full rounded-[10px_0px_0px_10px] not-md:rounded-[10px] hover:border-2 hover:border-indigo-700'>
-              <div className=' absolute shadow-indigo-400 shadow-[40px_50px_200px_70px] top-50 left-40 rounded-full'></div>
+            <div className=' relative  backdrop-blur-sm bg-conic-180  w-full rounded-[10px_0px_0px_10px] not-md:rounded-[10px] hover:border-2 hover:border-indigo-700'>
+              <div className=' absolute shadow-indigo-400 shadow-[40px_50px_200px_70px] top-50 left-40 rounded-full ping-slow'></div>
                 
                 <div className=' h-10 m-2 font-extrabold flex justify-between px-5 items-center gap-3  text-[16px] md:text-2xl '>
                   <div><span>ADDMITION</span> <span>OPEN</span> <span className='font-sans text-red-600'>NOW</span></div>
