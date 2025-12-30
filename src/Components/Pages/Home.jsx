@@ -143,14 +143,14 @@ function Home() {
           bg-[url('https://images.pexels.com/photos/1824273/pexels-photo-1824273.jpeg')] 
           bg-cover bg-right  max-w-[1600px] m-auto rounded-2xl relative">
             <div className="  flex flex-col items-start w-full relative">
-              <span className="p-2 font-extrabold md:text-2xl text-[2.2vw] font-alluser  text-gray-400">
+              <span className="p-2  md:text-2xl text-[2.2vw] font-alluser capitalize text  text-gray-400">
                 Information of NEET PG Admission-2025 of R. CarePlus
                 Multispeciality Hospital
               </span>
 
               <div className="flex   gap-10 p-3 bg-amber-50/10 min-w-full rounded-[0px_15px_0px_0px]">
                 {/* activitis button   */}
-                <button className=" group flex items-center justify-center not-md:text-[10px]  px-5 py-1.5 rounded-2xl border font-bold gap-2">
+                <button className=" font-alluser group flex items-center justify-center not-md:text-[10px]  px-5 py-1.5 rounded-2xl border font-bold gap-2">
                   <img
                     src="/src/assets/icon/Student_icon.png"
                     className="h-5 "
@@ -180,7 +180,7 @@ function Home() {
                     WebkitBackgroundClip: "text",
                     backgroundClip: "text",
                   }}
-                  className="text-[clamp(25px,3vw,32px)] ">
+                  className="text-[clamp(25px,3vw,32px)] font-bebas ">
                   CarePlus Multispeciality Medicale College & Hospital
                   established in 1986
                 </span>

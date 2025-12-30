@@ -36,10 +36,10 @@ function Navbar() {
 
 
   const menuclass =
-    "font-bold text-[12px] hover:border hover:text-emerald-500 flex bg-green-500/10 border border-green-500 p-2 cursor-pointer rounded-[8px]";
+    "font-alluser text-[12px] hover:border hover:text-emerald-500 flex bg-green-500/10 border border-green-500 p-2 cursor-pointer rounded-[8px]";
 
   const Dex_menu =
-    "flex md:text-[14px]  cursor-pointer whitespace-nowrap hover:text-amber-500 font-bold p-2 rounded-[10px] ";
+    "flex md:text-[14px]  cursor-pointer whitespace-nowrap hover:text-amber-500 font-alluser p-2 rounded-[10px] ";
 
   return (
     <>

@@ -56,9 +56,15 @@ button:focus-visible {
 }
 @font-face {
   font-family: alluser;
-  src: url(/font/Hanuman-VariableFont_wght.ttf);
+  src: url(/font/PassionOne-Bold.ttf);
 }
+@font-face {
+  font-family: bebas;
+  src: url(/font/BebasNeue-Regular.ttf);
+}
+
 @theme {
+  --font-bebas: "bebas" , "alluser";
   --font-knews: "knewave" , sans-serif;
   --font-BBH: "BBH" , "sans-serif";
   --font-alluser: "alluser" , "sans-serif"
