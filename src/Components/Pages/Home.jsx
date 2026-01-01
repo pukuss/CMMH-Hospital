@@ -75,39 +75,11 @@ function Home() {
                   //   backgroundClip: "text",
                   //   color: "transparent",
                   // }}
-                  className=" not-md:text-[5vw] text-6xl font-bold font-BBH">
+                  className=" not-md:text-[4vw] text-6xl font-bold font-BBH">
                   CarePlus Multispeciality Medicale College & Hospital
                 </span>
 
-                <div className=" animate-slideDown transition-all duration-300 grid grid-rows-2 gap-5 w-[80%] md:w-[25%] absolute md:bottom-20 bottom-20 right-0 not-md:right-[10%]">
-                  <div className="flex justify-center items-end not-md:text-[13px] text-[14px] text-blue-400 font-extrabold">
-                    Healing Lives with Precision, Compassion, and Trust</div>
-                  
-                  
-                  <div className=" grid grid-cols-2 gap-2 ">
-                    <div className=" relative rounded-2xl">
-                    {" "}
-                    <div className=" absolute flex justify-center items-center font-BBH z-20 border w-full h-full hover:opacity-70 opacity-0 bg-black transition-all delay-150">Emergency</div>
-                    <img
-                      className=" absolute rounded-[5px]"
-                      src="/src/assets/images/hospital_1.jpg"
-                      alt=""
-                    />
-                  </div>
-
-
-                  <div className=" rounded-2xl relative ">
-                   <div className=" absolute flex justify-center items-center font-BBH z-20 border w-full h-full hover:opacity-70 opacity-0 bg-black transition-all delay-150">Critical cases</div>
-                    {" "}
-                    <img
-                      className=" rounded-[5px] "
-                      src="/src/assets/images/hospital_2.jpg"
-                      alt=""
-                    />
-                  </div>
-                  </div>
-                  
-                </div>
+             
               </div>
 
               {/* bottome apply button and logo and section  */}
@@ -137,9 +109,9 @@ function Home() {
         </div>
 
         {/* Main containar Of Home Page   */}
-        <div className="border w-full m-auto mt-20 not-md:p-2 ">
+        <div className=" w-full m-auto mt-20 not-md:p-2  overflow-hidden">
           <div
-            className=" z-10 not-md:h-[50vh] 
+            className=" z-10 not-md:h-[90vh] 
           bg-[url('https://images.pexels.com/photos/1824273/pexels-photo-1824273.jpeg')] 
           bg-cover bg-right  max-w-[1600px] m-auto rounded-2xl relative">
             <div className="  flex flex-col items-start w-full relative">
@@ -148,12 +120,12 @@ function Home() {
                 Multispeciality Hospital
               </span>
 
-              <div className="flex   gap-10 p-3 bg-amber-50/10 min-w-full rounded-[0px_15px_0px_0px]">
+              <div className="flex   gap-10 p-3  min-w-full rounded-[0px_15px_0px_0px]">
                 {/* activitis button   */}
-                <button className=" font-alluser group flex items-center justify-center not-md:text-[10px] text-purple-500  px-5 py-1 rounded-[5px] border font-bold gap-2">
+                <button className=" font-alluser not-md:px-1 not-md:py-0 bg-black/50 group flex items-center justify-center not-md:text-[10px] text-purple-500  px-0 py-1 rounded-[5px] border font-bold gap-2">
                   <img
                     src="/src/assets/icon/Student_icon.png"
-                    className="h-5 "
+                    className="h-5 not-md:h-3 "
                     alt=""
                   />
                   <span>ACTIVITS</span>
@@ -163,8 +135,16 @@ function Home() {
                 </button>
 
                 {/* union button  */}
-                <button className=" shadow-sm shadow-black text-nowrap flex not-md:text-[10px] items-center justify-center  border  md:px-5 px-2 py-0 rounded-2xl bg-black font-bold gap-2">
-                  STUDENT UNION
+              <button className=" font-alluser bg-black/50 group flex items-center justify-center not-md:text-[10px] text-purple-500  px-5 py-1 rounded-[5px] border font-bold gap-2">
+                  <img
+                    src="/src/assets/icon/Student_icon.png"
+                    className="h-5 "
+                    alt=""
+                  />
+                  <span>STUDENT UNION </span>
+                  <span className="opacity-0 group-hover:opacity-100 flex items-center justify-center transition text-[18px]">
+                    ›
+                  </span>
                 </button>
               </div>
             </div>
@@ -334,12 +314,12 @@ function Home() {
                 
                 <div className="p-5 w-full h-full bg-[linear-gradient(9deg,rgba(100,0,255,0.5)_50%,rgba(255,0,225,0.1)_100%)] ">
 
-                    <div className="p-2 flex gap-3 rounded-lg w-full font-BBH text-purple-500 mb-2 bg-purple-500/20">
+                    <div className="p-2 flex items-center gap-3 rounded-lg not-md:text-[14px] w-full font-BBH text-purple-500 mb-2 bg-purple-500/20">
                       <span><LocateFixedIcon /></span>
                       <span>Hospital Faculty</span>
                     </div>
 
-                    <div className=" font-bold ">
+                    <div className=" font-bold  not-md:text-[14px]">
                       At <span className="font-extrabold text-purple-500">CarePlus Multispeciality Medicale College & Hospital</span> , healthcare is not just treatment — it is
                       responsibility. We combine medical expertise, modern
                       infrastructure, and compassionate care to ensure every

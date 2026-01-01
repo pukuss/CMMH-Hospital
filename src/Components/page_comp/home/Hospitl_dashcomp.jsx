@@ -47,10 +47,9 @@ function Hospitl_dashcomp() {
   
   return (
     <>
-        <div className='w-full h-60 bg-black flex transition-all delay-300 '>
+        <div className='w-full  bg-black flex h-60 transition-all delay-300  '>
 
-          <div className='  w-[30%] md:w-[25%] h-full p-1'>
-                <div className=' h-full w-full not-md:text-[14px] gap-1.5 border-r-2 p-1  flex flex-col justify-center items-start border-purple-950'>
+                <div className=' h-full w-[30%] md:w-[25%] not-md:text-[14px] gap-1.5 border-r-2 p-1  flex flex-col  justify-center items-start border-purple-950 '>
                     {Item.map((element,index)=>{ 
                         return <div
                           key={index}
@@ -65,7 +64,6 @@ function Hospitl_dashcomp() {
                         </div>
                     })}
                 </div>
-            </div>
 
 
 
