@@ -8,7 +8,7 @@ function Footer() {
       {/* BACKGROUND IMAGE */}
       <div
         className="absolute inset-0 h-full w-full bg-cover bg-center z-0 rounded-2xl bg-fixed"
-        style={{ backgroundImage: "url('/public/bg_video/Bottme_bg.png')" }}
+        style={{ backgroundImage: "url('bg_video/Bottme_bg.png')" }}
       />
 
       {/* GRADIENT OVERLAY FOR READABILITY */}
