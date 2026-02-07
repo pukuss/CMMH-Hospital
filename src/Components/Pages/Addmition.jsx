@@ -114,7 +114,7 @@ function Addmition() {
 
                   <div>
                     <button
-                      className="border font-black border-pink-600 m-1 flex gap-5 justify-center items-center px-10 not-md:px-5 rounded-[5px] bg-purple-600/50"
+                      className="border font-black border-pink-600 m-1 flex gap-5 justify-center items-center px-10 not-md:px-5 rounded-xl bg-purple-600/50"
                       type="button">
                       <span>VISIT OUR COURSE</span>
                       <span className="border rounded-full p-2 not-md:p-0 m-1 bg-white/20">
@@ -127,43 +127,34 @@ function Addmition() {
               </div>
 
               <div className=" animate-slideDown w-full h-full  grid  gap-1 rounded-2xl">
-                <div className="grid  h-full gap-3 bg-blac backdrop-blur-lg rounded-xl p-5 ">
+                <div className="grid font-black  h-full gap-3 bg-blac backdrop-blur-lg rounded-xl p-5 ">
 
 
                   {COURSE.map((element, index) => {
                     return (
                       <div
                         key={index}
-                        className=" relative z-10 hover:border-amber-500   grid auto-rows-[minmax(40px,auto)]  group rounded-2xl bg-linear-to-br from-zinc-900 to-gray-800 border border-purple-400 italic p-2">
-                        <div className=" flex  justify-between px-2 font-black items-center">
-                          <h1 className="flex items-center gap-2">
-                            <Rocket color="skyblue" size={15} /> {element.name}
-                          </h1>
-                          <h6 
-                            className="text-transparent bg-clip-text bg-linear-to-r from-sky-50 to-blue-400">
-                            Rupis
-                          </h6>
-                          <div className=" absolute bg-amber-400 shadow-amber-500  shadow-[50px_30px_80px_15px] -z-10"></div>
-                        </div>
-                        <h6 className=" gap-2 border-purple-500/20 border max-w-max px-5 h-7 rounded-4xl group-hover:bg-lime-600/20 font-black bg-blue-400/10 ml-2 items-center flex text-[12px]">
-                          <Book size={15} color="gold" />
-                          {element.course}
-                        </h6>
-
-                        <div className=" text-amber-400 text-[12px] grid justify-items-end px-5 p2 border border-amber-50/10 rounded-xl bg-black/20">
-                          <h3>
-                            <label className="text-amber-50 " htmlFor="">
-                              DURATION :{" "}
-                            </label>{" "}
-                            {element.year}
-                          </h3>
-                          <h3>
-                            <label className="text-amber-50" htmlFor="">
-                              DURATION :{" "}
-                            </label>{" "}
-                            {element.year}
-                          </h3>
-                        </div>
+                        className=" relative  z-10 hover:border-amber-500  flex group rounded-2xl bg-linear-to-br from-zinc-900 to-gray-800 border-2 border-purple-400 italic ">
+                          {/* Sectione One  */}
+                          <div className="border gap-2 p-2 justify-items-start max-w-40 md:w-60 grid rounded-[10px_0px_0px_10px] bg-white ">
+                            <h1 className="text-gray-500 md:text-[14px] text-[12px]">COURSE</h1>
+                            <h4 className="md:text-[18px] text-purple-600 ">{element.name}</h4>
+                            <div className="border-t w-full text-[10px] flex group-hover:text-green-500 text-gray-600/70">View Details    {">"}</div>
+                          </div>
+                          {/* Section two  */}
+                          <div className="  grid p-2 w-full border-amber-50 border-l-3 border-dashed ">
+                            <h1 className="flex md:text-[12px] text-[10px] ">{element.elegiblity}</h1>
+                            <div className="flex justify-between">
+                              <h1>{element.course}</h1>
+                              <p>Rupis</p>
+                            </div>
+                           <div className="flex justify-between" >
+                             <h4 className="text-[10px] h-3 flex rounded-3xl px-2 items-center bg-green-500/20">{element.year}</h4>
+                              <button
+                                className="border px-3 h-6 flex items-center rounded-2xl text-[14px] bg-amber-600"
+                              >Continue</button>
+                          </div>
+                           </div>
                       </div>
                     );
                   })}

@@ -9,11 +9,14 @@ import Account from "./page_comp/enroll/Account";
 
 
 function Navbar() {
+
+
   const [open, setopen] = useState(false);
   const [clicked, setClicked] = useState(false);
   const RefMenuBar = useRef(null);
+  
   // const UserTheme = <User2 />
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
 
 
@@ -53,14 +56,18 @@ const navigate = useNavigate();
             <div className="border-r-10 border-amber-500 w-29 rounded-tr-full ">
               <div className="border-r-8  w-27 rounded-tr-full border-amber-50">
                 <div className="border-r-10 w-25 rounded-tr-full border-emerald-500 ">
-                  <img src={RG_Kar_Hospital_lgo} className="h-10 md:h-16" />
+                  {/* <img src={RG_Kar_Hospital_lgo} className="h-10 md:h-16" /> */}
+                  <div className=" h-full -space-y-2 font-black">
+                    <h1 className="">CMMH</h1>
+                    <h6 className="text-amber-400 text-[12px]">HOSPITAL</h6>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Desktop Menu */}
-          <ul className="md:flex md:flex-nowrap xl:gap-2 md:gap-2 hidden">
+          <ul className="md:flex md:flex-nowrap xl:gap-2 md:gap-2 hidden ">
             <li className={Dex_menu}>
               <NavLink
                 to="/"
@@ -100,7 +107,7 @@ const navigate = useNavigate();
             <li className={Dex_menu}>ABOUT US</li>
           </ul>
 
-          <div className="flex justify-between items-center gap-5  md:w-50">
+          <div className="flex  justify-between items-center gap-5  ">
            {/* ----------------------------------------- */}
            {/* LogIn LOgOut Button  */}
            {/* ------------------------------------- */}
@@ -113,7 +120,7 @@ const navigate = useNavigate();
 
               }}
 
-              className={`text-sm flex justify-center items-center font-bold px-4 not-md:py-4 py-1.5 rounded-[10px] not-md:h-7 hover:px-8 transition-all duration-300 ${
+              className={`  text-sm flex justify-center items-center font-bold px-4 not-md:py-4 py-1.5 rounded-[10px] not-md:h-7 hover:px-8 transition-all duration-300 ${
                 clicked ? "border-red-600 border shadow-2xl bg-red-600/30 shadow-red-600 " : " border-green-400 border hover:bg-green-500/20 text-green-500 shadow-2xl shadow-green-600"
               }`}>
                 
@@ -135,9 +142,11 @@ const navigate = useNavigate();
             {/* Hamburger */}
             <button
               onClick={() => setopen(!open)}
-              className="md:hidden h-6 w-6">
+              className="md:hidden  h-6 w-18 justify-between items-center font-black flex gap-1 outline-none">
               {/* <img src={MenuBar} alt="" /> */}
-              <LucideMenu />
+              {/* <h1>MENU</h1> */}
+              <LucideMenu className={open?'text-lime-400':'text-amber-500'}/>
+              <h1>Menu</h1>
             </button>
           </div>
         </div>

@@ -21,6 +21,7 @@ import Infenera from "../page_comp/home/Infenera";
 import GemeniBar from "../page_comp/Effects/GemeniBar";
 import GithubBox from "../page_comp/home/GithubBox";
 import Hospitl_dashcomp from "../page_comp/home/Hospitl_dashcomp";
+import Back_music_popup from "../page_comp/home/Back_music_popup";
 
 
 
@@ -95,6 +96,10 @@ function Home() {
                   CarePlus Multispeciality Medicale College & Hospital
                 </span>
               </div>
+
+
+            <Back_music_popup />
+
 
               {/* bottome apply button and logo and section  */}
               <div className="flex justify-between items-center  absolute bottom-10">
@@ -308,7 +313,7 @@ function Home() {
             </div>
           </div>
 
-          <div className=" max-w-[1600px] m-auto mt-10 rounded-2xl overflow-hidden p-2 ">
+          <div className=" max-w-[1600px] m-auto mt-10 rounded-2xl overflow-hidden p-0 ">
             <Hospitl_dashcomp />
           </div>
         </div>

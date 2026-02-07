@@ -27,6 +27,7 @@ const Courses =[
             nationility : "",
             category : "",
             geder:"",
+            neet_UID :"",
             course : "",
 
         })
@@ -54,14 +55,14 @@ const Courses =[
         <>
 
             {/* From  */}
-            <div className=' bg-amber-900/0 flex justify-start w-full font-bold text-[16px] not-md:text-[13px] overflow-hidden'>
+            <div className=' bg-amber-900/0 flex justify-start w-full h-full font-bold text-[16px] not-md:text-[13px] overflow-hidden'>
                 <form action="" className='w-full flex flex-col gap-6 p-5'>
 
     {/* -----------------------Name----------------------------- */}
                     <div className='  w-full flex justify-between items-center pl-2' >  {/* name  */}
                         <label htmlFor="username">Name : </label>
                         <input
-                            className='border-b  px-1 md:w-[25vw] not-md:w-[50vw] bg-none outline-none'
+                            className='border-b  px-1 md:w-[25vw] not-md:w-[50vw] bg-none outline-none bg-white/20 rounded-xl p-2'
                             type="text"
                             placeholder='NAME'
                             name="User_Name"
@@ -75,7 +76,7 @@ const Courses =[
                     <div className='  w-full flex justify-between items-center pl-2' >  {/* name  */}
                         <label htmlFor="Father_name">Father Name : </label>
                         <input
-                            className='border-b px-1 md:w-[25vw] w-[50vw] bg-none outline-0'
+                            className='border-b px-1 md:w-[25vw] w-[50vw] bg-none outline-0 bg-white/20 rounded-xl p-2'
                             type="text"
                             placeholder='Father Name'
                             name="Father_Name"s
@@ -89,7 +90,7 @@ const Courses =[
                     <div className=' w-full flex justify-between items-center pl-2 '>  
                         <label htmlFor="Addhar_UID"> Addhar No: </label>
                         <input
-                            className='border-b px-1 md:w-[25vw] w-[50vw] outline-0'
+                            className='border-b px-1 md:w-[25vw] w-[50vw] outline-0 bg-white/20 rounded-xl p-2'
                             type="text"
                             name='Addhar_UID'
                             inputMode='numeric'
@@ -104,7 +105,7 @@ const Courses =[
                     <div className=' w-full flex justify-between  items-center pl-2'>  
                         <label htmlFor="HSP">Hospital Name / ID : </label>
                         <input
-                            className='border-b px-1 md:w-[25vw] w-[50vw]  outline-0'
+                            className='border-b px-1 md:w-[25vw] w-[50vw]  outline-0 bg-white/20 rounded-xl p-2'
                             type="text"
                             name="HSP_Name"
                             readOnly
@@ -116,7 +117,7 @@ const Courses =[
                     <div className=' w-full flex justify-between items-center pl-2'>   {/* Hospital Name */}
                         <label htmlFor="Contact_Number">Contact Number : </label>
                         <input
-                            className='border-b px-1 md:w-[25vw] w-[50vw]  outline-0'
+                            className='border-b px-1 md:w-[25vw] w-[50vw]  outline-0  bg-white/20 rounded-xl p-2'
                             type="text"
                             value={User_Enroll_deta.Contact_Number}
                             name="Contact_Number"
@@ -128,7 +129,7 @@ const Courses =[
 {/* --------------------------Nationality---------------------------- */}
                     <div className=' w-full flex justify-between items-center pl-2'>   {/* Hospital Name */}
                         <label htmlFor="Nationality">Nationality : </label>
-                        <select className='border-b outline-0'
+                        <select className='p-2 outline-0 bg-white/20 rounded-xl'
                             onChange={HandelForm}
                             name="nationility" 
                             id="Nationality" >
@@ -143,7 +144,7 @@ const Courses =[
 {/* -------------------------Category-------------------------------------- */}
                     <div className=' w-full flex not-md:text-[12px] justify-between items-center pl-2'>   {/* Hospital Name */}
                         <label htmlFor="Category">Category / SC ST OBC : </label>
-                        <select className='border-b  p-1 outline-0'
+                        <select className=' bg-white/20 rounded-xl  p-2 outline-0'
                             name="category"
                             onChange={HandelForm}
                             id="Category" >
@@ -203,16 +204,17 @@ const Courses =[
                     <div className='p-2 w-full flex justify-between items-center pl-2 -bg-conic-270 bg-sky-300/20 rounded-lg'>
                         <label htmlFor="">NEET UID SCORE : </label>
                         <input
-                            className='border border-emerald-600 rounded-2xl px-1 w-[50vw] bg-green-400/10 pl-4 p-1 md:w-[25vw]  outline-0'
+                            className='border border-emerald-600 rounded-xl px-1 w-[50vw] bg-green-400/10 pl-4 p-1 md:w-[25vw]  outline-0'
                             placeholder='NEET UID'
-                            type="text" 
-                            name="" 
+                            type="text"
+                            onChange={HandelForm} 
+                            name=" neet_UID" 
                             id="" />
                     </div>
 
 
     {/* ------------------Courses----------------------- */}
-                    <div className='flex justify-end gap-[10vw] items-center'>
+                    <div className='flex justify-between gap-[10vw] items-center'>
                         <label htmlFor="course">Courses : </label>
                         
                         <select
@@ -237,7 +239,11 @@ const Courses =[
                                 ))}                            
                         </select>
 
-                        <button type="button" onClick={()=>SEND_DETA(User_Enroll_deta)} >button</button>
+                        <button 
+                            className='bg-sky-400 p-2 px-5 rounded-xl border  '
+                            type="button" 
+                            onClick={()=>SEND_DETA(User_Enroll_deta)} 
+                        >Enroll </button>
                     </div>
 
 
@@ -245,36 +251,27 @@ const Courses =[
 {/* ------------------------Pop up Banking Offer & Discount Offer ------------------------------ */}
 
                     { BamkOffer && (
-                        <div className=' group border h-20 border-purple-500 bg-purple-500/10 rounded-[10px] not-md:text-[12px]'>
-                            <div className=' group flex  justify-between'>
-                                <div className='group flex gap-2 px-4 p-1 rounded-lg hover:bg-green-400/20  md:w-1/2 not-md:w-[70vw] w-[50vw] m-1 not-md:text-[10px] text-[12px]'>
-                                    <span className='text-yellow-400 '> Get Descount</span>
-                                    <span className='text-green-600'>UP-TO</span>
-                                    <span>2,000₹  to  25,000</span>
-                                </div >
-                        
-                                <Ban onClick={()=> {if(BamkOffer) setBamkOffer(false)}  }
-                                size={18} color='white' className='m-1 ' />
-                            </div>
-
-                            <div className=''>
-                                <div className='flex justify-between p-2'>
-                                    <ShoppingCart className='' />
-                                    <div className='flex gap-2 not-md:text-[10px] items-center'>
-                                        <div className='text-red-600'>25% ON</div> {/* APi ITEM */}
-                                        <span className='border px-3 text-green-400 text-[14px] rounded-2xl bg-purple-500/40 border-purple-600 hover:bg-purple-500' >OFFER</span>
-
+                        <div className=' cursor-pointer group border h-20 border-purple-500 bg-purple-500/10 rounded-xl flex not-md:text-[12px] overflow-hidden'>
+                            {/* Section one  */}
+                            <div className=' overflow-hidden w-1/4 group flex  justify-between'>
+                                <div className='grid h-34 bg-amber-200 w-full '>
+                                    <div className=' border'>
+                                        {/* image  */}
                                     </div>
+                                    <p className='font-black text-[10px] text-black/50'>Get The Offer</p>
+                                </div>
+                            </div>
+                            {/* Section Two  */}
+                            <div className=' font-black  grid px-4'>
+                                <h1 className='text-[16px] '>Earn Upto 30% Off</h1> 
+                                <div className=''>
+                                    <h1 className='text-gray-400'>USE HDFC CREDIT CARD</h1>
+                                    <p className='flex text-[12px] text-gray-500/80 gap-4 font-alluser'>Pay Up-To ₹8L-40L <ShoppingCart size={15} color='gray' /> </p>
                                 </div>
                             </div>
 
                         </div>
                     )}
-
-    
-
-
-
 
                 </form>
             </div>
@@ -283,4 +280,4 @@ const Courses =[
 }
 
 export default EnrolForm
-export {Courses}
+// export {Courses}

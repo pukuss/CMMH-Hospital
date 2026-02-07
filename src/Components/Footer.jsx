@@ -3,7 +3,9 @@ import { motion } from "framer-motion";
 import { 
   HeartPulse, MapPin, Phone, Mail, ArrowRight, 
   Facebook, Twitter, Instagram, Linkedin, ShieldCheck, 
-  Globe, Zap, Award, Users, Clock
+  Globe, Zap, Award, Users, Clock,
+  Github,
+  QrCode
 } from "lucide-react";
 
 const Footer = () => {
@@ -163,7 +165,7 @@ const Footer = () => {
           
           <div className="flex items-center gap-8">
              <div className="flex gap-4">
-                {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
+                {[Facebook, Twitter, Instagram, Linkedin, Github].map((Icon, i) => (
                   <a key={i} href="#" className="text-slate-600 hover:text-white transition-colors"><Icon size={20} /></a>
                 ))}
              </div>

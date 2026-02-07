@@ -295,22 +295,15 @@ function Hospitl_dashcomp() {
         return (
           <div className="h-full bg-purple-200 p-2 text-black">
   {/* Contact Bar */}
-  <div className="text-black not-md:text-[10px] flex justify-between p-2 font-bold bg-white w-full text-[12px] items-center rounded-2xl">
-    <div className="flex justify-center items-center gap-2">
-      <LetterText className="p-1 rounded-lg bg-gray-400" />
-      prashantaa007@gmail.com
-    </div>
-    <div>+91 8945512739</div>
+  <div className="text-black not-md:text-[10px] flex justify-between p-2 font-black bg-white w-full text-[12px] items-center rounded-2xl">
+    OUR HOSPITAL PRESENTED BY  
   </div>
 
   {/* Critical Status */}
-  <div className="bg-white text-[16px] flex justify-between p-2 mt-2  not-md:mt-0.5 rounded-lg items-center">
-    <div className="font-alluser text-purple-700">
-      CRITICAL CASES
-    </div>
-    <div className="bg-purple-300/60 w-2/3 rounded-[10px] p-2 text-center text-[12px]">
-      24×7 Intensive & Emergency Critical Care
-    </div>
+  <div className="font-black bg-white text-[16px] flex justify-between p-2 mt-2  not-md:mt-0.5 rounded-lg items-center">
+    <h1>IndenEra</h1>
+    <h1>CMMH HOSPITAL</h1>
+    <h1>Support ?</h1>
   </div>
 
   {/* Critical Action */}
@@ -318,7 +311,7 @@ function Hospitl_dashcomp() {
     <div className="border-b border-t m-5  not-md:m-0  not-md:p-2.5 p-3 border-gray-500/50">
       <div className="flex not-md:flex-wrap justify-between items-center not-md:justify-center gap-2">
         <div className="text-[14px] not-md:text-[12px] font-semibold text-gray-700">
-          Immediate Support for Life-Threatening Conditions
+         CarePlus Multispeciality Medicale College & Hospital
         </div>
 
         <button
@@ -327,7 +320,7 @@ function Hospitl_dashcomp() {
           flex justify-center items-center bg-purple-400/70 rounded-lg p-2
           text-purple-800 text-[20px] hover:bg-purple-500 transition-all
           font-alluser hover:text-white">
-          REQUEST ICU
+          ABOUT US
         </button>
       </div>
 
@@ -344,7 +337,7 @@ function Hospitl_dashcomp() {
 
   return (
     <>
-      <div className="w-full  bg-black flex h-60 transition-all delay-300  ">
+      <div className="w-full  flex h-60 transition-all delay-300  ">
         <div className=" h-full w-[30%] md:w-[25%] not-md:text-[14px] gap-1.5 border-r-2 p-1  flex flex-col  justify-center items-start border-purple-950 ">
           {Item.map((element, index) => {
             return (
@@ -355,15 +348,15 @@ function Hospitl_dashcomp() {
                   setUseItem(index);
                 }}
                 className={`
-                            ${index === useItem ? "bg-gray-900 border border-pink-600 transition-all delay-150" : "bg-[#02021f]"}
-                            w-full p-1 font-alluser font-extrabold rounded-[5px] flex pl-2 py-2  cursor-pointer hover:bg-gray-900`}>
+                            ${index === useItem ? "bg-amber-50/50 border border-pink-600 transition-all delay-150" : " bg-linear-to-br from-blue-500 to-purple-300 "}
+                            w-full p-1 font-extrabold rounded-[5px] flex pl-2 py-2  cursor-pointer hover:bg-gray-900`}>
                 {element}
               </div>
             );
           })}
         </div>
 
-        <div className="bg-amber-950 w-[70%] md:w-[85%] rounded-[5px] ">
+        <div className=" w-[70%] md:w-full rounded-[5px] ">
           {userUI()}
         </div>
       </div>
