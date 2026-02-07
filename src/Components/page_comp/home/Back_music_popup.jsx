@@ -23,7 +23,7 @@ function Back_music_popup() {
 
     const SLIDEOFF = setTimeout(() =>{
         setHide("hidden")
-    }, 10000)
+    }, 15000)
 
     const closeTimer = setTimeout(() => {
       setOpenPopUp(false);
@@ -41,7 +41,13 @@ function Back_music_popup() {
   return (
     <>
       {openPopUp && (
-        <div className={`bg-gray-500/80 italic rounded-2xl p-3 fixed bottom-10 left-5 text-[#fefaae] z-50 ${hide}  `}>
+        <div
+        style={{backgroundImage: `url('https://i.pinimg.com/736x/6d/bb/bf/6dbbbf96777bdf8f286ee2f669b18eda.jpg')`,
+           backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        }}
+         className={`backdrop-blur-md transition-all duration-500 ease-out bg-black italic rounded-2xl p-3 fixed bottom-10 left-5 text-[#fefaae] z-50 ${hide} shadow-inner shadow-black`}>
           <audio
             ref={audioRef}
             src="/bg_video/i_will_allaws _find_you.mp3"
