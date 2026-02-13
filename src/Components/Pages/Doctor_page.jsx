@@ -7,9 +7,8 @@ function Doctor_page() {
     <div
         className=" relative md:top-16 top-10 h-screen w-full bg-cover bg-center bg-no-repeat overflow-hidden"
         style={{
-          backgroundImage: "url('/Image/Arabic_background.jpg')",
+          backgroundImage: "url('/bg_video/cmmh.png')",
         }}>
-      
 
           {/* -------------Herocu section--------------------->> */}
           <div className=" h-[80vh] md:p-5 max-w-[1600px] m-auto ">
