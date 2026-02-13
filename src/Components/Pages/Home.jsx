@@ -75,6 +75,8 @@ function Home() {
             autoPlay
             muted
             loop
+            video preload="none"
+            poster="/bg_video/cmmh_lood.png"
             className="w-full object-cover h-screen  "
             src="/bg_video/dna_bg.mp4"></video>
         </div>
@@ -159,7 +161,7 @@ function Home() {
 
 
             {/* github dropdown arrow =============================================== */}
-            <div className=" p-10 flex m-5 gap-1 absolute bottom-0 not-md:-bottom-10 ">
+            <div className=" p-10 flex m-5 gap-1 absolute bottom-0 not-md:-bottom-10  ">
               <button
                 onClick={() => {
                   setgithubOpen(!githubOpen);
@@ -271,7 +273,7 @@ function Home() {
 
           {/* Doctor anime and about Hospital 2 color grid area  */}
           <div className=" ">
-            <div className=" max-w-[1600px] m-auto  mt-1.5  relative">
+            <div className=" max-w-[1600px] m-auto  mt-10  relative">
               <div className=" h-full w-full  rounded-[7px] overflow-hidden">
                 <div className="p-5 w-full h-full bg-[linear-gradient(9deg,rgba(100,0,255,0.5)_50%,rgba(255,0,225,0.1)_100%)] ">
                   <div className="p-2 flex items-center gap-3 rounded-lg not-md:text-[14px] w-full font-BBH text-purple-500 mb-2 bg-purple-500/20">

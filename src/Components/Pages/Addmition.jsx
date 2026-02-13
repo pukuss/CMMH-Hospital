@@ -4,7 +4,10 @@ import {
   ArrowBigRight,
   ArrowRight,
   Book,
+  CircleArrowDownIcon,
   DonutIcon,
+  Dot,
+  DotIcon,
   EqualApproximatelyIcon,
   FilterX,
   Goal,
@@ -55,7 +58,19 @@ function Addmition() {
   ];
   console.log(COURSE);
 
-
+  const DOC_NEED =[
+                    "Acknolegment Slip",
+                    " Document Veryfication Slip",
+                    " Payment Slip",
+                    " Cust Certifiate",
+                    " NEET Admit Card",
+                    "NEET Rank Card",
+                    "Birth Proof ",
+                    " Valid Proof",
+                    "10th Mark Sheet",
+                    "12Th Mark Sheet",
+  ]
+console.log(DOC_NEED);
 
 
 
@@ -171,7 +186,29 @@ function Addmition() {
 
 
 
-        <div className="mt-20 max-w-[1600px] m-auto ">
+        <div className="mt-20 max-w-[1600px] m-auto  ">
+          <div className=" rounded-2xl my-20 bg-[#0073ff9c] flex items-center  justify-between md:px-10 px-5 font-black not-md:flex-wrap">
+                  <div>
+                    <h1 className="text-2xl text-gray-400">NEET UG & PG Information</h1>
+                  </div>
+                  <div>
+                    <h1 className="text-xl border-b p-4 w-full">|  Document Requairment |</h1>
+                    <ul className=" transition-all dur  flex  text-[14px] gap-4 p-2 m-4 rounded-2xl bg-linear-to-r from-sky-600/50 to-purple-700/50 flex-wrap">
+                      {DOC_NEED.map((element, index)=>{
+                        return (
+                          <li  
+                            className=" flex  items-center  gap-3 bg-linear-to-r from-gray-900 to-black rounded-sm cursor-pointer flex-wrap p-4 px-6 border-t-4 border-t-amber-500 border-purple-500 border-2"
+                            key={index}>
+                          <CircleArrowDownIcon  size={15} color="green"/> 
+                          {element}
+                        </li>
+                        )
+                      })}
+                    </ul>
+                  </div>
+          </div>
+
+          {/* Addmition status check se3ction================================= */}
           <div>
             <Addmition_status />
           </div>

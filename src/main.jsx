@@ -15,6 +15,7 @@ import Enrolment from './Components/Pages/Sub_Page/Enrolment.jsx'
 import Register from './Components/Pages/LOGINCOMP/Register.jsx'
 import Login from './Components/Pages/LOGINCOMP/Login.jsx'
 import InfeneraPlus from './Components/Pages/Sub_Page/InfeneraPlus.jsx'
+import Doctor_page from './Components/Pages/Doctor_page.jsx'
 
 
 
@@ -47,7 +48,10 @@ const router = createBrowserRouter([
       path: "addmition/Enroll",
       element: <Enrolment />
       },
-    
+    {
+      path: "doctor",
+      element: <Doctor_page />
+    },
     {
       path: "Academic",
       element: <Academic />
