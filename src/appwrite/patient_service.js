@@ -1,74 +1,74 @@
 
-import conf from "../conf/conf";
-import { Client,Databases,ID } from "appwrite";
+// import conf from "../conf/conf";
+// import { Client,Databases,ID } from "appwrite";
 
-export class PatientService {
-    client = new Client();
-    databases;
-
-
-    constructor(){
-        this.client
-        .setEndpoint(conf.appwrite_Url)
-        .setProject(conf.appwrite_ProjectId);
-
-        this.databases = new Databases(this.client);
-    }
+// export class PatientService {
+//     client = new Client();
+//     databases;
 
 
-    async SEND_PT_DATA({name, age, gender, bloodgroup, addharno, contactno, address, altnumber, datetime}) {
-        try{
-            const res = await this.databases.createDocument(detabase_id, detabasecollection_ID , ID.unique(),
-        {
-            name,
-            age,gender, bloodgroup, addharno, contactno, address, altnumber, datetime
+//     constructor(){
+//         this.client
+//         .setEndpoint(conf.appwrite_Url)
+//         .setProject(conf.appwrite_ProjectId);
 
-        });
-        return res;
-        }
-
-        catch(error){
-            console.log("SEND_PT_DATA ERROE :", error);
-            throw error;    
-        }
-    }
+//         this.databases = new Databases(this.client);
+//     }
 
 
-    async GET_DATA(){
-        try {
-            const res = await this.databases.listDocuments(
-                databases_id,databasecollectionid,
-            );
-            return res.documents;    
-        } 
+//     async SEND_PT_DATA({name, age, gender, bloodgroup, addharno, contactno, address, altnumber, datetime}) {
+//         try{
+//             const res = await this.databases.createDocument(detabase_id, detabasecollection_ID , ID.unique(),
+//         {
+//             name,
+//             age,gender, bloodgroup, addharno, contactno, address, altnumber, datetime
+
+//         });
+//         return res;
+//         }
+
+//         catch(error){
+//             console.log("SEND_PT_DATA ERROE :", error);
+//             throw error;    
+//         }
+//     }
+
+
+//     async GET_DATA(){
+//         try {
+//             const res = await this.databases.listDocuments(
+//                 databases_id,databasecollectionid,
+//             );
+//             return res.documents;    
+//         } 
         
-        catch (error) {
-            console.log("GET_DATA FAILD :", error);
-            throw error;
-        }
-    }
+//         catch (error) {
+//             console.log("GET_DATA FAILD :", error);
+//             throw error;
+//         }
+//     }
 
 
-    // UPDATE
-    async UPDATE_PT_DATA(documentid,data){
-        try {
-            const res = await  this.databases.updateDocument(
-                db_id,collection_id,
-                documentID,
-                data
-            );
-            return res;
-        } 
-        catch (error) {
-            console.log("UPDATE_PT_DATA ERROR : ", error);
-            throw error;
-        }
-    }
+//     // UPDATE
+//     async UPDATE_PT_DATA(documentid,data){
+//         try {
+//             const res = await  this.databases.updateDocument(
+//                 db_id,collection_id,
+//                 documentID,
+//                 data
+//             );
+//             return res;
+//         } 
+//         catch (error) {
+//             console.log("UPDATE_PT_DATA ERROR : ", error);
+//             throw error;
+//         }
+//     }
 
-    //  GET SINGALE DATA 
-        async GET_SINGALE_PT_DATA(){
+//     //  GET SINGALE DATA 
+//         async GET_SINGALE_PT_DATA(){
             
-        }    
+//         }    
 
 
 
@@ -78,7 +78,7 @@ export class PatientService {
 
 
 
-}
+// }
 
-const patientservice = new PatientService();
-export default patientservice;
+// const patientservice = new PatientService();
+// export default patientservice;
